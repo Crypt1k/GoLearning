@@ -1,3 +1,4 @@
+// Example of graceful shutdown
 package main
 
 import (
