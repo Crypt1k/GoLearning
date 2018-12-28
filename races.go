@@ -12,7 +12,7 @@ import (
 
 func main() {
 	// Sets the maximum number of CPUs that can be executing simultaneously
-	runtime.GOMAXPROCS(10)
+	runtime.GOMAXPROCS(runtime.NumCPU())
 	var mutex sync.Mutex
 
 	counter := 0
