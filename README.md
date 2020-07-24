@@ -1,3 +1,3 @@
 # Examples of fixes for popular issues
 
-![Learn Golang](kcalg.png)
+![Learn Golang](index.png)
