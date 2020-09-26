@@ -1,17 +1,13 @@
-// Example data races in Golang concurrency
-// run with flag -race to test it
+// Counter never be 1000 for NumCPU > 1
 package main
-
 
 import (
 	"fmt"
-	"time"
 	"sync"
 	"runtime"
 )
 
 func main() {
-	// Sets the maximum number of CPUs that can be executing simultaneously
 	runtime.GOMAXPROCS(runtime.NumCPU())
 	var mutex sync.Mutex
 
@@ -23,10 +19,6 @@ func main() {
 			mutex.Unlock()
 		}()
 	}
-
-	time.Sleep(time.Second)
-
-	mutex.Lock()
+	
 	fmt.Println(counter)
-	mutex.Unlock()
 }
